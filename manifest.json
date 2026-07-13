@@ -1,6 +1,6 @@
 {
   "name": "Black Cat Runner",
-  "short_name": "CatRunner",
+  "short_name": "Black Cat Runner",
   "description": "Black Cat Runner: Meow Dash - Cozy Endless Runner Arcade Game",
   "start_url": "./index.html",
   "display": "standalone",
