@@ -24,12 +24,12 @@ let stars = []; // background scrolling stars
 // Playable Cat Entity
 const cat = {
     x: 70,
-    y: GROUND_Y,
+    y: GROUND_Y - 36,
     w: 36,
     h: 36,
     vy: 0,
     isJumping: false,
-    groundY: GROUND_Y
+    groundY: GROUND_Y - 36
 };
 
 // local storage keys
@@ -86,7 +86,7 @@ function startNewRun() {
     spawnTimer = 0;
     nextSpawnDelay = 100;
     
-    cat.y = GROUND_Y;
+    cat.y = cat.groundY;
     cat.vy = 0;
     cat.isJumping = false;
     
@@ -137,8 +137,8 @@ function updatePhysics() {
         cat.y += cat.vy;
         
         // Check ground landing
-        if (cat.y >= GROUND_Y) {
-            cat.y = GROUND_Y;
+        if (cat.y >= cat.groundY) {
+            cat.y = cat.groundY;
             cat.vy = 0;
             cat.isJumping = false;
         }
