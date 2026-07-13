@@ -1,0 +1,38 @@
+{
+  "name": "Black Cat Runner",
+  "short_name": "CatRunner",
+  "description": "Black Cat Runner: Meow Dash - Cozy Endless Runner Arcade Game",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#130f25",
+  "theme_color": "#9b5de5",
+  "categories": ["games"],
+  "icons": [
+    {
+      "src": "build/appx/Square44x44Logo.png",
+      "sizes": "44x44",
+      "type": "image/png"
+    },
+    {
+      "src": "build/appx/StoreLogo.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "build/appx/Square71x71Logo.png",
+      "sizes": "71x71",
+      "type": "image/png"
+    },
+    {
+      "src": "build/appx/Square150x150Logo.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "build/appx/Square310x310Logo.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    }
+  ]
+}

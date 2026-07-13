@@ -1,0 +1,44 @@
+{
+  "name": "black-cat-runner",
+  "version": "1.0.0",
+  "description": "Black Cat Runner: Meow Dash - Cozy Endless Runner Arcade Game",
+  "author": "Kocur",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "59513Lukes.BlackCatRunner",
+    "productName": "Black Cat Runner",
+    "win": {
+      "target": [
+        "appx"
+      ]
+    },
+    "appx": {
+      "publisher": "CN=5B8EDAC0-7E93-4119-961E-9118180BF0FD",
+      "publisherDisplayName": "Kocur",
+      "identityName": "59513Lukes.BlackCatRunner",
+      "applicationId": "MeowCatRunner",
+      "displayName": "Black Cat Runner"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "game.js",
+      "audio.js",
+      "style.css",
+      "main.js",
+      "manifest.json",
+      "sw.js",
+      "build/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.0"
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Cat Runner 🐾🏃‍♂️</title>
+    <!-- Google Playful Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA Manifest and Service Worker -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered!'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Ad Banner (Google AdSense Slot) -->
+        <div id="ad-banner" class="ad-slot glass">
+            <div class="ads-wrapper" style="width: 100%; display: flex; justify-content: center; align-items: center; min-height: 90px;">
+                <!-- GOOGLE ADSENSE CODE: Replace ca-pub-YOUR_ADSENSE_PUB_ID and YOUR_AD_SLOT_ID when ready -->
+                <!--
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_PUB_ID" crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_PUB_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                -->
+                <!-- Default fallback banner displayed until AdSense script is uncommented -->
+                <div class="ad-fallback-content" style="display: flex; align-items: center; gap: 15px;">
+                    <span class="ad-label">Google AdSense</span>
+                    <span class="ad-text">🐱 Premium Kitty treats & toys - 15% off with code RUNMEOW! 🐾</span>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <div class="title-row">
+                <h1 class="bounce-title">Black Cat Runner <span class="run-emoji">🏃‍♂️🐈‍⬛</span></h1>
+            </div>
+            <p class="subtitle">Press SPACE or Click Canvas to jump! Dodge the dogs and obstacles.</p>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-area glass">
+            <canvas id="game-canvas" width="700" height="300"></canvas>
+        </main>
+
+        <!-- Bottom Stats & Control Panel -->
+        <footer class="controls-panel glass">
+            <div class="stat-box">
+                <span class="stat-icon">⭐</span>
+                <span class="stat-lbl">Score:</span>
+                <span id="score-val" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">🏆</span>
+                <span class="stat-lbl">Best:</span>
+                <span id="best-val" class="stat-value">0</span>
+            </div>
+            <div class="button-box">
+                <button id="restart-btn" class="btn primary-btn">New Run 🔄</button>
+                <button id="sound-btn" class="btn icon-btn">🔊 Sound</button>
+            </div>
+        </footer>
+
+        <div class="copyright">
+            <p>Made with 💜 for cat lovers by Kocur</p>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-overlay" class="modal-overlay hidden">
+        <div id="overlay-content" class="modal-content glass pop-in">
+            <div id="overlay-emoji" class="modal-emoji">💀</div>
+            <h2 id="overlay-title">Run Ended!</h2>
+            <p id="overlay-desc">You bumped into a dog!</p>
+            <button id="overlay-action-btn" class="btn primary-btn large-btn">Run Again 🐾</button>
+        </div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
